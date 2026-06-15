@@ -33,7 +33,7 @@
         </div>
     </div>
 
-    {{-- Script notifikasi Hapus Akun --}}
+    {{-- Notifikasi Hapus Akun --}}
     @if (session('status') === 'account-deleted')
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
