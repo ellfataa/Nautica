@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }} - Registrasi Mitra</title>
+    <title>Registrasi | Nautica</title>
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700,800&display=swap" rel="stylesheet" />
@@ -25,9 +25,14 @@
         <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-blue-100/70 rounded-full mix-blend-multiply filter blur-3xl"></div>
 
         <div class="relative z-10 flex flex-col items-center">
-            <p class="text-indigo-600 text-[18px] font-extrabold tracking-widest uppercase mb-6">
+            <p class="text-indigo-600 text-[18px] font-extrabold tracking-widest uppercase mb-2">
                 Kelola Asrama Kampus
             </p>
+
+            {{-- Project Title: Nautica --}}
+            <h2 class="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-500 tracking-[0.2em] uppercase mb-8">
+                Nautica
+            </h2>
 
             <div class="w-32 h-32 bg-white rounded-[2rem] p-6 shadow-xl shadow-slate-200/50 border border-slate-100 mb-8 transform transition duration-500 hover:-translate-y-1.5">
                 <img src="{{ asset('assets/images/logo-amn.webp') }}" alt="Logo AMN" class="w-full h-full object-contain">
@@ -37,7 +42,6 @@
                 Akademi Maritim Nusantara<br>Cilacap
             </h1>
         </div>
-
     </div>
 
     {{-- KOLOM KANAN: Form Register --}}

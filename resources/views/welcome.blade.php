@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ config('app.name', 'Sistem Asrama') }}</title>
+    <title>Welcome | Nautica</title>
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700,800&display=swap" rel="stylesheet">
@@ -56,7 +56,9 @@
              x-init="setTimeout(() => show = false, 4000)"
              class="fixed top-6 left-1/2 transform -translate-x-1/2 z-[60] bg-slate-900 text-white px-6 py-3 rounded-full shadow-2xl flex items-center gap-3 border border-slate-700/50 backdrop-blur-md">
             <div class="bg-emerald-500/20 p-1 rounded-full">
-                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path></svg>
+                <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
             </div>
             <span class="text-sm font-medium">{{ session('status') }}</span>
         </div>
@@ -71,6 +73,12 @@
 
     {{-- Main Content --}}
     <main class="relative z-10 w-full max-w-3xl mx-auto px-6 flex flex-col items-center text-center animate-fade-in-up">
+
+        {{-- Project Title: Nautica --}}
+        <h2 class="text-2xl sm:text-3xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-500 tracking-[0.2em] uppercase mb-4">
+            Nautica
+        </h2>
+
         {{-- Centered Logo --}}
         <div class="w-24 h-24 sm:w-28 sm:h-28 bg-white rounded-[2rem] p-5 shadow-xl shadow-slate-200/50 border border-slate-100 mb-8 transform transition duration-500 hover:-translate-y-1.5 flex items-center justify-center">
             <img src="{{ asset('assets/images/logo-amn.webp') }}" alt="Logo AMN" class="w-full h-full object-contain">

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }} - Login Mitra</title>
+    <title>Login | Nautica</title>
 
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=inter:400,500,600,700,800&display=swap" rel="stylesheet" />
@@ -26,9 +26,14 @@
         <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-blue-100/70 rounded-full mix-blend-multiply filter blur-3xl"></div>
 
         <div class="relative z-10 flex flex-col items-center">
-            <p class="text-indigo-600 text-[18px] font-extrabold tracking-widest uppercase mb-6">
+            <p class="text-indigo-600 text-[18px] font-extrabold tracking-widest uppercase mb-2">
                 Kelola Asrama Kampus
             </p>
+
+            {{-- Project Title: Nautica --}}
+            <h2 class="text-3xl sm:text-4xl font-black text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-blue-500 tracking-[0.2em] uppercase mb-8">
+                Nautica
+            </h2>
 
             <div class="w-32 h-32 bg-white rounded-[2rem] p-6 shadow-xl shadow-slate-200/50 border border-slate-100 mb-8 transform transition duration-500 hover:-translate-y-1.5">
                 <img src="{{ asset('assets/images/logo-amn.webp') }}" alt="Logo AMN" class="w-full h-full object-contain">
@@ -90,11 +95,6 @@
                 <div x-data="{ showPassword: false }">
                     <div class="flex justify-between items-center mb-2">
                         <label for="password" class="block text-slate-700 font-bold text-xs uppercase tracking-wider">Password</label>
-                        {{-- @if (Route::has('password.request'))
-                            <a href="{{ route('password.request') }}" class="text-xs font-bold text-indigo-600 hover:text-indigo-800 transition-colors hover:underline">
-                                Lupa password?
-                            </a>
-                        @endif --}}
                     </div>
                     <div class="relative">
                         <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
@@ -104,8 +104,8 @@
                         </div>
 
                         <input id="password" name="password" required autocomplete="current-password" placeholder="••••••••"
-                            x-bind:type="showPassword ? 'text' : 'password'"
-                            class="block w-full rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/20 py-3 pl-11 pr-12 transition-all duration-200 text-sm font-medium placeholder-slate-400">
+                               x-bind:type="showPassword ? 'text' : 'password'"
+                               class="block w-full rounded-xl border border-slate-200 bg-slate-50 focus:bg-white focus:border-indigo-500 focus:ring-4 focus:ring-indigo-500/20 py-3 pl-11 pr-12 transition-all duration-200 text-sm font-medium placeholder-slate-400">
 
                         <button type="button" @click="showPassword = !showPassword" class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600 focus:outline-none transition-colors" aria-label="Toggle password visibility">
                             {{-- Icon Mata Terbuka --}}
@@ -116,14 +116,6 @@
                     </div>
                     @error('password') <span class="text-red-500 text-xs mt-1.5 font-medium block">{{ $message }}</span> @enderror
                 </div>
-
-                {{-- Remember Me Checkbox --}}
-                {{-- <div class="block pt-1">
-                    <label for="remember_me" class="inline-flex items-center group cursor-pointer">
-                        <input id="remember_me" type="checkbox" class="w-4 h-4 rounded border-slate-300 text-indigo-600 shadow-sm focus:ring-indigo-500 transition-colors cursor-pointer" name="remember">
-                        <span class="ml-2 text-sm text-slate-600 group-hover:text-slate-900 transition-colors font-medium">{{ __('Ingat Saya') }}</span>
-                    </label>
-                </div> --}}
 
                 {{-- Tombol Action --}}
                 <div class="pt-4">
@@ -152,6 +144,7 @@
             document.addEventListener('DOMContentLoaded', function() {
                 Swal.fire({
                     icon: 'error',
+                    title: 'Login Gagal',
                     text: "{{ session('login_error') }}",
                     confirmButtonText: 'Coba Lagi',
                     confirmButtonColor: '#ef4444',
@@ -170,6 +163,7 @@
             document.addEventListener('DOMContentLoaded', function() {
                 Swal.fire({
                     icon: 'success',
+                    title: 'Berhasil!',
                     text: 'Anda Berhasil Melakukan Login',
                     confirmButtonText: 'Ke Halaman Dashboard',
                     confirmButtonColor: '#4f46e5',
